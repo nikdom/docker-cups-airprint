@@ -1,4 +1,11 @@
-# quadportnick/cups-airprint
+# nikdom/docker-cups-airprint
+
+-----------------------
+
+*This forks quadportnick/cups-airprint and adds the foo2zjs printer driver.*
+The image can be found [here](https://hub.docker.com/repository/docker/nikdom/docker-cups-airprint).
+
+-----------------------
 
 This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint relay for printers that are already on the network but not AirPrint capable. I'm using it on a Synology NAS because the built in server doesn't work properly with my printers. The local Avahi will be utilized for advertising the printers on the network.
 

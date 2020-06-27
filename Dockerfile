@@ -1,12 +1,12 @@
-FROM ubuntu:zesty
+FROM ubuntu:bionic
 
 # Add repos
-RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ zesty multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb http://us.archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ zesty-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb http://archive.ubuntu.com/ubuntu/ zesty-security multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
-	echo 'deb-src http://archive.ubuntu.com/ubuntu/ zesty-security multiverse' >> /etc/apt/sources.list.d/multiverse.list
+RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ bionic multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ bionic multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb-src http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb http://archive.ubuntu.com/ubuntu/ bionic-security multiverse' >> /etc/apt/sources.list.d/multiverse.list && \
+	echo 'deb-src http://archive.ubuntu.com/ubuntu/ bionic-security multiverse' >> /etc/apt/sources.list.d/multiverse.list
 
 # Install the packages we need. Avahi will be included
 RUN apt-get update && apt-get install -y \
@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
 	cups-pdf \
 	inotify-tools \
 	python-cups \
+	printer-driver-foo2zjs \
 && rm -rf /var/lib/apt/lists/*
 
 # This will use port 631
